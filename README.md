@@ -27,3 +27,7 @@ In the example above, the full command would be `./launch-node.sh node.config`.
 **Common issues**
 
 `permission denied` when running `.sh` files: First execute `chmod +x FILE_NAME` to grant permissions
+
+**Upgrading go-caelum**
+
+Whenever new updates are available, please run `./upgrade-caelum.sh`
