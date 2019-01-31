@@ -12,7 +12,7 @@ Depending on your security level in your shell, the root password can be asked d
 
   - run `cp example.config node.config`
   - Fill in your `PRIVATE_KEY`. Don't append the `0x`.
-  - Set a strong password in `PASS` to unlock your account.
+  - Set a strong password in file `.pwd` to unlock your account.
   - Set the folder where caelum should store the data in `DATADIR`.
   - Set your prefered public `PORT`.
   - Choose a unique `NAME` to get listed on the statistics page.
