@@ -18,7 +18,7 @@ internal_install_packages() {
 internal_install_go() {
   sudo add-apt-repository ppa:longsleep/golang-backports
   sudo apt-get update
-  sudo apt-get install golang-go
+  sudo apt-get install golang-go -y
   echo Go 1.11.1 has been installed.
   cd $WORK_DIR
 }
