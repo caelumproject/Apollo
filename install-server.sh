@@ -27,7 +27,7 @@ internal_install_go-caelum() {
   cd $HOME
   git clone 'https://github.com/caelumdev/go-caelum'
   cd $HOME/go-caelum && make all
-  sudo cp $HOME/go-caelum/build/bin/tomo /usr/local/bin
+  sudo cp $HOME/go-caelum/build/bin/caelum /usr/local/bin
   sudo cp $HOME/go-caelum/build/bin/bootnode /usr/local/bin
   sudo cp $HOME/go-caelum/build/bin/puppeth /usr/local/bin
   echo Go-caelum has been installed
