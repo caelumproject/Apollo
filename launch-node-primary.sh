@@ -42,7 +42,7 @@ caelum \
     --announce-txs \
     --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8545 --rpcvhosts "*" \
     --ws --wsaddr 0.0.0.0 --wsport 8546 --wsorigins "*" \
-    --unlock "${wallet}" --password ./.pwd  --ethstats "$NAME:caelumTestNet@159.65.89.43:3004" \
+    --unlock "${wallet}" --password ./.pwd  --ethstats "$NAME:caelumTestNet@206.189.241.127:3004" \
     --mine &
 
 wait
