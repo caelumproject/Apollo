@@ -28,7 +28,7 @@ if [ ! -d ./${DATADIR}/${NAME}/caelum/chaindata ]
 then
   wallet=$(caelum account import --password .pwd --datadir ${DATADIR}/${NAME} <(echo ${PRIVATE_KEY}) | awk -v FS="({|})" '{print $2}')
   # Init our blockchain. Pay attention to using the correct version (testnet/main)
-  caelum --datadir ${DATADIR}/${NAME} init ./config/chain/testnet/Caelum_alpha.json
+  caelum --datadir ${DATADIR}/${NAME} init ./config/chain/testnet/CLMP_4.json
 else
   wallet=$(caelum account list --datadir ${DATADIR}/${NAME} | head -n 1 | awk -v FS="({|})" '{print $2}')
 fi
