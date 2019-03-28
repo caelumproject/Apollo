@@ -26,7 +26,11 @@ In the example above, the full command would be `./launch-node.sh node.config`.
 
 To run a full masternode, use the command `./launch-node-primary.sh <CONFIG_FILE_PATH_AND_NAME>`
 
- :warning: **Testnet notice:**  :warning: Testnet users should only run the `./launch-node-primary.sh` command.
+ :warning: **Testnet notice:** Testnet users should only run the `./launch-node-primary.sh` command.
+
+ Check if you are displayed on our stats page https://stats.testnet.caelumfoundation.com/
+
+ Send our developers a DM to receive some testnet tokens in order to activate and setup your masternode.
 
 ---
 
