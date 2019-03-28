@@ -4,7 +4,7 @@
 
 **Installation**
 
-`git clone https://github.com/caelumproject/Apollo && chmod -R 755 Apollo/``
+`git clone https://github.com/caelumproject/Apollo && chmod -R 755 Apollo/`
 
 If you don't have Golang and/or go-caelum installed yet, run our installation script `./install-server.sh`.
 
