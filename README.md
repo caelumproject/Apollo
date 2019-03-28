@@ -22,6 +22,8 @@ Depending on your security level in your shell, the root password can be asked d
 Run the caelum node with command `./launch-node.sh <CONFIG_FILE_PATH_AND_NAME>`.
 In the example above, the full command would be `./launch-node.sh node.config`.
 
+To run a full masternode, use the command `./launch-node-primary.sh <CONFIG_FILE_PATH_AND_NAME>`
+
 ---
 
 **Common issues**
