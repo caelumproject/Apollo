@@ -37,7 +37,7 @@ fi
 echo Starting the nodes for ${wallet}...
 
 caelum \
-    --bootnodes "enode://f29dbe9e359e2241049951c05c54d4e01a1e65be262d70543f7e8004ef6d6449474880208d96e05a8c58009410ccc9dc0ceccb199523608e72a975d3c937d792@188.166.63.199:30301,enode://f29dbe9e359e2241049951c05c54d4e01a1e65be262d70543f7e8004ef6d6449474880208d96e05a8c58009410ccc9dc0ceccb199523608e72a975d3c937d792@206.189.241.127:38888" --syncmode "full" \
+    --bootnodes "enode://fea3712d633300fc5c3ee9afbebc39e22245ee70592afd84b20778eff6fe3d71351ee7bafddb7dca3535c798a8fb4dd0c912848682579530483b638521e6f311@104.248.93.200:30301,enode://2aa2134aa2a1df5b9fd23e8df5bab6b57ce59148434fb42f2dd154a3fd9de182d65963dc7faecb16c4483f18d608f3740dd3783a8e7bb61c4ade8d25ca72fbf1@104.248.93.200:30344" --syncmode "full" \
     --datadir ${DATADIR}/${NAME} --networkid 159 --port $PORT \
     --announce-txs \
     --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8545 --rpcvhosts "*" \
@@ -46,3 +46,5 @@ caelum \
     --mine --store-reward --verbosity 5 &
 
 wait
+
+a8e7bb61c4ade8d25ca72fbf1@104.248.93.200:30344
