@@ -4,6 +4,8 @@
 
 **Installation**
 
+`git clone https://github.com/caelumproject/Apollo && chmod -R 755 Apollo/``
+
 If you don't have Golang and/or go-caelum installed yet, run our installation script `./install-server.sh`.
 
 Depending on your security level in your shell, the root password can be asked during the installation script to execute `sudo` commands during installation.
