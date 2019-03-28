@@ -31,6 +31,8 @@ To run a full masternode, use the command `./launch-node-primary.sh <CONFIG_FILE
  Check if you are displayed on our stats page https://stats.testnet.caelumfoundation.com/
 
  Send our developers a DM to receive some testnet tokens in order to activate and setup your masternode.
+ 
+ Subscribe to the Telegram channel for updates/instructions as masternode owner https://t.me/joinchat/AAAAAFankV-nfwLbBRbHMw
 
 ---
 
