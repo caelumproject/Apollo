@@ -46,5 +46,3 @@ caelum \
     --mine --store-reward --verbosity 3 &
 
 wait
-
-a8e7bb61c4ade8d25ca72fbf1@104.248.93.200:30344
