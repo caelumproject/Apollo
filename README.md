@@ -28,6 +28,10 @@ Run the apollo scipt by executing `./apollo.sh` along with one of the following 
 
  **Hint!** You can run all these actions in one go by running `./apollo.sh start`. This executes all needed steps in a single command.
 
+ Enter any key in your console to let the masternode run in the background.
+
+ To know your coinbase account when setting up a masternode on https://master.testnet.caelumfoundation.com use the command `./apollo.sh list`.
+
 
 
  Check if you are displayed on our stats page https://stats.testnet.caelumfoundation.com/
