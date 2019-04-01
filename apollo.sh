@@ -20,6 +20,7 @@ list() {
   accounts=$(caelum --datadir ${DATADIR}/${NAME} account list | awk -F'[{}]' '{print $2}')
   if [ -z "$accounts" ]
   then
+    caelum --datadir ${DATADIR}/${NAME} init ./config/chain/testnet/CLMP_5.json
     echo "no input" # Create account????
     read -p "Do you want to create a new coinbase account?"
     if [[ $REPLY =~ ^[Yy]$ ]]
@@ -37,6 +38,7 @@ list() {
 
 # Create a new account and ask to save it in the configuration
 new() {
+  
   caelum --datadir ${DATADIR}/${NAME} account new
   echo
   # echo Copy this address and use it as coinbase address on CaelumMaster.
