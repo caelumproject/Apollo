@@ -52,4 +52,8 @@ Run the apollo scipt by executing `./apollo.sh` along with one of the following 
 
 Whenever new updates are available, please run `./upgrade-caelum.sh`
 
+**Upgrade Apollo**
 
+`cd && rm -rf Apollo && git clone https://github.com/caelumproject/Apollo && chmod -R 755 Apollo/ && cd Apollo`
+
+This will remove the repository and reinstall it completely.
