@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # Import configuration file
-source dev.env
+source testnet.env
 
 # Define some pretty shell colors
 RED='\033[0;31m'
