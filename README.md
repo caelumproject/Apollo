@@ -45,7 +45,10 @@ Run the apollo scipt by executing `./apollo.sh` along with one of the following 
 **Common issues**
 
 `permission denied` when running `.sh` files: First execute `chmod +x FILE_NAME` to grant permissions
+`error: Your local changes to the following files would be overwritten by merge:` Stash the local changes made by the `chmod` action by executing `git stash` first.
 
 **Upgrading go-caelum**
 
 Whenever new updates are available, please run `./upgrade-caelum.sh`
+
+
