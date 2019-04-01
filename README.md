@@ -57,3 +57,7 @@ Whenever new updates are available, please run `./upgrade-caelum.sh`
 `cd && rm -rf Apollo && git clone https://github.com/caelumproject/Apollo && chmod -R 755 Apollo/ && cd Apollo`
 
 This will remove the repository and reinstall it completely.
+
+**Import a private key/account**
+
+`caelum account import --password .pwd --datadir YOUR_DATADIR PRIVATE_KEY`
