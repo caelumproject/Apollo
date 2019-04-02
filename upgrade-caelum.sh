@@ -20,7 +20,7 @@ echo installed version is $CURRENT
 source ~/.profile
 
 cd $HOME
-cd $HOME/go-caelum && git pull && make all
+cd $HOME/go-caelum && git checkout master && git pull && make all
 
 sudo rm  /usr/local/bin/caelum
 sudo rm  /usr/local/bin/bootnode
