@@ -69,7 +69,7 @@ Re-enter the password you created. This will then start the node and begin synci
 
 `PRIVATE_KEY` needs to be a text file containing the address's private key. You can create a blank file with `nano` or `vi` and paste the private key, then save it. **Once the import is complete, delete this text file.**
 
-On success, `cd Apollo` then `./apollo.sh start` to start the node.
+On success, `cd Apollo` then edit `testnet.env` and make `COINBASE` = your masternode address, minus the leading `0x`. Save, then `./apollo.sh start`.
 
 ---
 
