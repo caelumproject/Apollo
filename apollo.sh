@@ -59,7 +59,7 @@ save_config() {
     then
       read -s -p "Coinbase unlocking password? "
       echo
-      sed -i "/COINBASE/s/=.*/=${get_coinbase}/" dev.env # Append coinbase
+      sed -i "/COINBASE/s/=.*/=${get_coinbase}/" testnet.env # Append coinbase
       echo $REPLY > .pwd # Save to .pwd file
     else
       echo Account creation aborted by user
@@ -97,7 +97,7 @@ start() {
   process_id=$!
 
   echo Caelum started with process id $process_id
-  sed -i "/PID/s/=.*/=${process_id}/" dev.env # Write process ID to config for logs
+  sed -i "/PID/s/=.*/=${process_id}/" testnet.env # Write process ID to config for logs
 }
 
 
