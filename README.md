@@ -71,6 +71,19 @@ Re-enter the password you created. This will then start the node and begin synci
 
 On success, `cd Apollo` then edit `testnet.env` and make `COINBASE` = your masternode address, minus the leading `0x`. Save, then `./apollo.sh start`.
 
+**Connecting to our testnet with MetaMask**
+
+You will need to go to https://master.testnet.caelumfoundation.com/
+
+There you must click the `login`button. If you use metamask, you need to connect to a custom network first
+
+```
+RPC URL: https://testnet.caelumfoundation.com
+Chain ID: 159
+Symbol CLMPTESTNET
+Nickname CLMP_TESTNET
+```
+
 ---
 
 **Common issues**
