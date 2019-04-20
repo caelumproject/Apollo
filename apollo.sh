@@ -50,7 +50,9 @@ rename() {
 
 }
 
-import() {}
+import() {
+  echo "Pending integration"
+}
 
 # Create a new account and ask to save it in the configuration
 new() {
