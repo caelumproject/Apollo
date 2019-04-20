@@ -36,9 +36,25 @@ list() {
   fi
 }
 
+rename() {
+
+  echo "Current masternode name: ${NAME}"
+  read -p "Enter the new masternode name:"
+
+  sudo mv ${DATADIR}/${NAME} ${DATADIR}/${REPLY}
+  sudo rm -rf ${DATADIR}/${NAME}
+
+  sed -i "/NAME/s/=.*/=${REPLY}/" testnet.env # Append coinbase
+
+  echo "Masternode ${NAME} renamed to $REPLY"
+
+}
+
+import() {}
+
 # Create a new account and ask to save it in the configuration
 new() {
-  
+
   caelum --datadir ${DATADIR}/${NAME} account new
   echo
   # echo Copy this address and use it as coinbase address on CaelumMaster.
@@ -111,5 +127,6 @@ case "$1" in
   new ) new ;;
   stop ) stop ;;
   start ) start ;;
+  rename ) rename ;;
   nvm ) save_config ;;
 esac

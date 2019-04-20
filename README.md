@@ -34,6 +34,7 @@ Run the apollo scipt by executing `./apollo.sh` along with one of the following 
  - `start` Launches the masternode
  - `stop` Stops the caelum masternodes
  - `restart` Reboots the masternode
+ - `rename` Rename your masternode
 
  **Hint!** You can run all these actions in one go by running `./apollo.sh start`. This executes all needed steps in a single command.
 
@@ -98,12 +99,10 @@ When updating via `git pull`: `error: Your local changes to the following files 
 
 **Upgrading go-caelum**
 
-Whenever new updates are available, please run `./upgrade-caelum.sh`. 
+Whenever new updates are available, please run `./upgrade-caelum.sh`.
 
 **Upgrade Apollo**
 
 `cd && rm -rf Apollo && git clone https://github.com/caelumproject/Apollo && chmod -R 755 Apollo/ && cd Apollo`
 
 This will remove the repository and reinstall it completely.
-
-
