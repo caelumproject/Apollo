@@ -91,6 +91,12 @@ Nickname CLMP_TESTNET
 cd && git clone https://github.com/caelumproject/go-caelum-dev && cd go-caelum-dev && git checkout rebrand && make caelum && sudo rm  /usr/local/bin/caelum && sudo cp build/bin/caelum /usr/local/bin
 ```
 
+To return to the stable version:
+
+```
+cd && cd go-caelum && git checkout master && make caelum && sudo rm  /usr/local/bin/caelum && sudo cp build/bin/caelum /usr/local/bin
+```
+
 ---
 
 **Common issues**
