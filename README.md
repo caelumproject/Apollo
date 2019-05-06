@@ -85,6 +85,12 @@ Symbol CLMPTESTNET
 Nickname CLMP_TESTNET
 ```
 
+**Run latest dev branch**
+
+```
+cd && git clone https://github.com/caelumproject/go-caelum-dev && cd go-caelum-dev && git checkout rebrand && make caelum && sudo rm  /usr/local/bin/caelum && sudo cp build/bin/caelum /usr/local/bin
+```
+
 ---
 
 **Common issues**
