@@ -115,7 +115,7 @@ start() {
   echo Account $COINBASE will be used as node coinbase address.
 
   caelum \
-    --bootnodes "enode://10cc6d854a76645f9b318cb80c56b8f25d00fe3a5d798e10d0de1b975e8a6efe385d707994f1b4a27cabfc725b2dbdd86c5bbf4ad82428f7da0e72ce2f4c7be7@167.86.104.27:30301 ,enode://10cc6d854a76645f9b318cb80c56b8f25d00fe3a5d798e10d0de1b975e8a6efe385d707994f1b4a27cabfc725b2dbdd86c5bbf4ad82428f7da0e72ce2f4c7be7@167.86.104.182:30301" --syncmode "full" \
+    --bootnodes "enode://10cc6d854a76645f9b318cb80c56b8f25d00fe3a5d798e10d0de1b975e8a6efe385d707994f1b4a27cabfc725b2dbdd86c5bbf4ad82428f7da0e72ce2f4c7be7@167.86.104.27:30301,enode://10cc6d854a76645f9b318cb80c56b8f25d00fe3a5d798e10d0de1b975e8a6efe385d707994f1b4a27cabfc725b2dbdd86c5bbf4ad82428f7da0e72ce2f4c7be7@167.86.104.182:30301" --syncmode "full" \
     --datadir ${DATADIR}/${NAME} --networkid 159 --port $PORT \
     --announce-txs \
     --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8545 --rpcvhosts "*" \
