@@ -20,6 +20,7 @@ Optional: create a directory to store the masternode/chain data:
 **Configuration**
 
 Copy the `testnet.example.env` file by executing `cp testnet.example.env testnet.env` first.
+Copy the `example.pwd` file by executing `cp example.pwd pwd`.
 
 Edit `/Apollo/testnet.env` with the following:
 
