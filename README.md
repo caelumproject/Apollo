@@ -81,7 +81,7 @@ You will need to go to https://master.testnet.caelumfoundation.com/
 There you must click the `login`button. If you use metamask, you need to connect to a custom network first
 
 ```
-RPC URL: https://testnet.caelumfoundation.com
+RPC URL: https://rpc.testnet.caelumfoundation.com
 Chain ID: 159
 Symbol CLMPTESTNET
 Nickname CLMP_TESTNET
