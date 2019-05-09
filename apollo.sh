@@ -106,7 +106,7 @@ force () {
 
 log() {
   echo Showing log file. Ctrl+C to exit
-  tail -f -n 2 ${DATADIR}/${NAME}log.txt
+  tail -f -n 2 ${DATADIR}/${NAME}/log.txt
 }
 
 # Start masternodes
