@@ -6,11 +6,11 @@
 
 Depending on your security level in your shell, the root password can be asked during the installation script to execute `sudo` commands during installation.
 
-`git clone https://github.com/caelumproject/Apollo && chmod -R 755 Apollo/`
+`git clone https://github.com/caelumproject/Apollo`
 
 If you don't have Golang and/or go-caelum installed yet, run our installation script:
 `cd Apollo`
-`./install-server.sh`.
+`bash install-server.sh`.
 Follow the prompts and accept/enter when asked. Once finished you might be asked to close/restart the terminal.
 On a successfull install you should have `go-caelum` as a directory alongside `Apollo`.
 
@@ -18,6 +18,8 @@ Optional: create a directory to store the masternode/chain data:
 `mkdir YOUR_DATADIR`
 
 **Configuration**
+
+Copy the `testnet.example.env` file by executing `cp testnet.example.env testnet.env` first.
 
 Edit `/Apollo/testnet.env` with the following:
 
@@ -27,7 +29,7 @@ Edit `/Apollo/testnet.env` with the following:
 
 **Usage**
 
-Run the apollo scipt by executing `./apollo.sh` along with one of the following parameters:
+Run the apollo scipt by executing `bash apollo.sh` along with one of the following parameters:
 
  - `list` Gives an overview of all accounts
  - `new` Create a new account
@@ -36,11 +38,11 @@ Run the apollo scipt by executing `./apollo.sh` along with one of the following 
  - `restart` Reboots the masternode
  - `rename` Rename your masternode
 
- **Hint!** You can run all these actions in one go by running `./apollo.sh start`. This executes all needed steps in a single command.
+ **Hint!** You can run all these actions in one go by running `bash apollo.sh start`. This executes all needed steps in a single command.
 
  Enter any key in your console to let the masternode run in the background.
 
- To know your coinbase account when setting up a masternode on https://master.testnet.caelumfoundation.com use the command `./apollo.sh list`.
+ To know your coinbase account when setting up a masternode on https://master.testnet.caelumfoundation.com use the command `bash apollo.sh list`.
 
  Check if you are displayed on our stats page https://stats.testnet.caelumfoundation.com/
 
@@ -52,7 +54,7 @@ Run the apollo scipt by executing `./apollo.sh` along with one of the following 
 
 **Setting up a masternode with no initial masternode address**
 
-`./apollo.sh start` for the first time or `./apollo.sh new`
+`bash apollo.sh start` for the first time or `bash apollo.sh new`
 
 It will ask you if you want to create a new coinbase account. Accepting (`y`) will then prompt you for a password.
 
@@ -70,7 +72,7 @@ Re-enter the password you created. This will then start the node and begin synci
 
 `PRIVATE_KEY` needs to be a text file containing the address's private key. You can create a blank file with `nano` or `vi` and paste the private key, then save it. **Once the import is complete, delete this text file.**
 
-On success, `cd Apollo` then edit `testnet.env` and make `COINBASE` = your masternode address, minus the leading `0x`. Save, then `./apollo.sh start`.
+On success, `cd Apollo` then edit `testnet.env` and make `COINBASE` = your masternode address, minus the leading `0x`. Save, then `bash apollo.sh start`.
 
 **Connecting to our testnet with MetaMask**
 
@@ -111,7 +113,7 @@ When updating via `git pull`: `error: Your local changes to the following files 
 
 **Upgrading go-caelum**
 
-Whenever new updates are available, please run `./upgrade-caelum.sh`.
+Whenever new updates are available, please run `bash upgrade-caelum.sh`.
 
 **Upgrade Apollo**
 
