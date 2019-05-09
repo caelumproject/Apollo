@@ -93,9 +93,20 @@ save_config() {
 
 # Stop masternodes
 stop() {
+  echo Stopping caelum node ${PID}
+  kill -SIGINT ${PID}
+  echo Caelum node ${PID} stopped.
+}
+
+force () {
   echo Stopping all caelum nodes...
   killall -HUP caelum
   echo All caelum nodes stopped.
+}
+
+log() {
+  echo Showing log file. Ctrl+C to exit
+  tail -f -n 2 ${DATADIR}/${NAME}log.txt
 }
 
 # Start masternodes
@@ -111,7 +122,7 @@ start() {
     --ws --wsaddr 0.0.0.0 --wsport 8546 --wsorigins "*" \
     --unlock "$COINBASE" --password ./.pwd \
     --ethstats "$NAME:caelumTestNet@167.86.104.182:3004" \
-    --mine --store-reward --verbosity 3 &
+    --mine --store-reward --verbosity 3 >${DATADIR}/${NAME}/log.txt 2>&1 &
   process_id=$!
 
   echo Caelum started with process id $process_id
@@ -131,4 +142,6 @@ case "$1" in
   start ) start ;;
   rename ) rename ;;
   nvm ) save_config ;;
+  log) log ;;
+  force-close) force ;;
 esac
