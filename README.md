@@ -37,6 +37,7 @@ Run the apollo scipt by executing `bash apollo.sh` along with one of the followi
  - `stop` Stops the caelum masternodes
  - `restart` Reboots the masternode
  - `rename` Rename your masternode
+ - `log` Shows the daemon output. Ctrl+c to exit.
 
  **Hint!** You can run all these actions in one go by running `bash apollo.sh start`. This executes all needed steps in a single command.
 
@@ -120,3 +121,7 @@ Whenever new updates are available, please run `bash upgrade-caelum.sh`.
 `cd && rm -rf Apollo && git clone https://github.com/caelumproject/Apollo && chmod -R 755 Apollo/ && cd Apollo`
 
 This will remove the repository and reinstall it completely.
+
+**Known bugs**
+
+After creating the initial account, chances are likely that your node will start without unlocking the account first. Until this is fixed, we recommend you, after first run, to stop the node and restart it. Check the logs to confirm it's running!.
