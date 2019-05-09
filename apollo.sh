@@ -20,7 +20,7 @@ list() {
   accounts=$(caelum --datadir ${DATADIR}/${NAME} account list | awk -F'[{}]' '{print $2}')
   if [ -z "$accounts" ]
   then
-    caelum --datadir ${DATADIR}/${NAME} init ./config/chain/testnet/CLMP_5.json
+    caelum --datadir ${DATADIR}/${NAME} init ./config/chain/testnet/clmp_pre_alpha.json
     echo "no input" # Create account????
     read -p "Do you want to create a new coinbase account?"
     if [[ $REPLY =~ ^[Yy]$ ]]
