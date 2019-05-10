@@ -19,32 +19,25 @@ Optional: create a directory to store the masternode/chain data:
 
 **Configuration**
 
-Copy the `testnet.example.env` file by executing `cp testnet.example.env testnet.env` first.
-Copy the `example.pwd` file by executing `cp example.pwd pwd`.
+From within the Apollo directory, run `bash apollo.sh start`.
 
-Edit `/Apollo/testnet.env` with the following:
-
-  - Set the folder where caelum should store the data in `DATADIR`. If you didn't make a directory earlier, leave as is.
-  - Set your prefered public `PORT`.
-  - Choose a unique `NAME` to get listed on the statistics page.
+The start command will execute the configuration helper. Please follow the steps displayed on the console to setup Apollo once.
 
 **Usage**
 
 Run the apollo scipt by executing `bash apollo.sh` along with one of the following parameters:
 
- - `list` Gives an overview of all accounts
- - `new` Create a new account
  - `start` Launches the masternode
  - `stop` Stops the caelum masternodes
- - `restart` Reboots the masternode
- - `rename` Rename your masternode
+ - `import` Allows a user to import a private key
+ - `force-close` Force close all running caelum instances
+ - `update` Update the Apollo files to their latest version
  - `log` Shows the daemon output. Ctrl+c to exit.
+ - `clean` Remove the entire datadir
 
  **Hint!** You can run all these actions in one go by running `bash apollo.sh start`. This executes all needed steps in a single command.
 
  Enter any key in your console to let the masternode run in the background.
-
- To know your coinbase account when setting up a masternode on https://master.testnet.caelumfoundation.com use the command `bash apollo.sh list`.
 
  Check if you are displayed on our stats page https://stats.testnet.caelumfoundation.com/
 
@@ -56,25 +49,17 @@ Run the apollo scipt by executing `bash apollo.sh` along with one of the followi
 
 **Setting up a masternode with no initial masternode address**
 
-`bash apollo.sh start` for the first time or `bash apollo.sh new`
+`bash apollo.sh start` for the first time.
 
-It will ask you if you want to create a new coinbase account. Accepting (`y`) will then prompt you for a password.
-
-When asked to save the values/masternode to the configuration file say yes. (`y`)
+It will ask you if you want to create a new coinbase account, or import an existing one.
 
 The password will be saved in `/Apollo/.pwd` and the address will be saved in `/Apollo/testnet.env`.
 
-Re-enter the password you created. This will then start the node and begin syncing.
+Complete the setup helper. This will then start the node and begin syncing.
 
 **Setting up a masternode with an existing masternode address (importing)**
 
-`caelum account import --password /path/to/Apollo/.pwd --datadir YOUR_DATADIR /path/to/PRIVATE_KEY`
-
-`YOUR_DATADIR` will be the path specified for `DATADIR` in `/Apollo/testnet.env`.
-
-`PRIVATE_KEY` needs to be a text file containing the address's private key. You can create a blank file with `nano` or `vi` and paste the private key, then save it. **Once the import is complete, delete this text file.**
-
-On success, `cd Apollo` then edit `testnet.env` and make `COINBASE` = your masternode address, minus the leading `0x`. Save, then `bash apollo.sh start`.
+Run `bash apollo.sh import` and follow the steps.
 
 **Connecting to our testnet with MetaMask**
 
