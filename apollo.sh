@@ -97,6 +97,11 @@ force () {
 }
 
 
+log() {
+  echo Showing log file. Ctrl+C to exit
+  tail -f -n 2 ${DATADIR}/${NAME}/log.txt
+}
+
 run() {
   # Use this for now.
   get_all_coinbases=$(caelum --datadir ${DATADIR}/${NAME} account list | awk -F'[{}]' '{print $2}' )
