@@ -108,13 +108,13 @@ run() {
   get_coinbase=$(echo $get_all_coinbases | awk '{print $1;}')
 
   caelum \
-    --bootnodes "enode://10cc6d854a76645f9b318cb80c56b8f25d00fe3a5d798e10d0de1b975e8a6efe385d707994f1b4a27cabfc725b2dbdd86c5bbf4ad82428f7da0e72ce2f4c7be7@167.86.104.27:30301,enode://10cc6d854a76645f9b318cb80c56b8f25d00fe3a5d798e10d0de1b975e8a6efe385d707994f1b4a27cabfc725b2dbdd86c5bbf4ad82428f7da0e72ce2f4c7be7@167.86.104.182:30301" --syncmode "full" \
+    --bootnodes "enode:////42fb3702537a685139e17752b58f0cbd3a2582f9f63d0dd523d87caed21d4c221663c81c5d76bbed98a5dc22ecd45ae5db8fc914c83aa9b3503ad6927e9eb033@167.86.104.27:30301,enode:////7586cfcba7cc364476cd8eca038405db288a7ae820063f27ba9b1bd9697a579830baeed5aaa6b074f088094dca403e0ef589ffa34587635e9762ecefe7c5baed@167.86.104.182:30301" --syncmode "full" \
     --datadir ${DATADIR}/${NAME} --networkid 159 --port $PORT \
     --announce-txs \
     --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8545 --rpcvhosts "*" \
     --ws --wsaddr 0.0.0.0 --wsport 8546 --wsorigins "*" \
     --unlock "$get_coinbase" --password ./.pwd \
-    --ethstats "$NAME:caelumPreAlpha@167.86.104.182:3004" \
+    --ethstats "$NAME:CaelumEIP@167.86.104.182:3004" \
     --mine --store-reward --verbosity 3 >${DATADIR}/${NAME}/log.txt 2>&1 &
   process_id=$!
 
