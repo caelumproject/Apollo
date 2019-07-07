@@ -23,7 +23,7 @@ include
 initGenesis() {
   if [ ! -d ${DATADIR}/${NAME}/caelum ]; then
     echo "No genesis found, creating genesis block..."
-    caelum --datadir ${DATADIR}/${NAME} init ./config/chain/testnet/clmp_pre_alpha.json
+    caelum --datadir ${DATADIR}/${NAME} init ./config/chain/testnet/eip918.json
     echo
     echo "${GREEN} Caelum genesis file initialized ${NC}"
     echo
