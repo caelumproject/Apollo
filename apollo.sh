@@ -114,7 +114,7 @@ run() {
     --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8545 --rpcvhosts "*" \
     --ws --wsaddr 0.0.0.0 --wsport 8546 --wsorigins "*" \
     --unlock "$get_coinbase" --password ./.pwd \
-    --ethstats "$NAME:CaelumEIP@167.86.104.182:3004" \
+    --ethstats "$NAME:CaelumEIP@136.244.87.225:3004" \
     --mine --store-reward --verbosity 3 >${DATADIR}/${NAME}/log.txt 2>&1 &
   process_id=$!
 
