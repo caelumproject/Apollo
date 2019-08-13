@@ -1,19 +1,22 @@
 #! /bin/bash
 
+BOOTNODE_1="enode://39481ad787702347f828fe126c86d1008cdf3d34c7b24ca8448dedba19e5a020e5a6fbc3774ebcc77e197f10d86205216014fab7f24d9fd663adfac13010a004@80.240.28.135:30301"
+BOOTNODE_2="enode://39481ad787702347f828fe126c86d1008cdf3d34c7b24ca8448dedba19e5a020e5a6fbc3774ebcc77e197f10d86205216014fab7f24d9fd663adfac13010a004@80.240.28.135:30301"
+
 include () {
-  if [ ! -f testnet.env ]; then
+  if [ ! -f mainnet.env ]; then
     echo "No configuration found, proceeding to setup helper..."
-    cp testnet.example.env testnet.env
+    cp mainnet.example.env mainnet.env
     cp example.pwd .pwd
     echo Welcome to Caelum Apollo initial configuration helper!
     read -p "Please enter the name you want to use for your node:"
     NODENAME=$REPLY
-    sed -i "/NAME/s/=.*/=${NODENAME}/" testnet.env # Append coinbase
+    sed -i "/NAME/s/=.*/=${NODENAME}/" mainnet.env # Append coinbase
     read -s -p "Please input a strong password to secure your account:"
     echo $REPLY > .pwd # Save to .pwd file
   fi
   echo "Configuration file found"
-  source testnet.env
+  source mainnet.env
 }
 
 
@@ -23,7 +26,7 @@ include
 initGenesis() {
   if [ ! -d ${DATADIR}/${NAME}/caelum ]; then
     echo "No genesis found, creating genesis block..."
-    caelum --datadir ${DATADIR}/${NAME} init ./config/chain/testnet/eip918.json
+    caelum --datadir ${DATADIR}/${NAME} init ./config/chain/mainnet/main.json
     echo
     echo "${GREEN} Caelum genesis file initialized ${NC}"
     echo
@@ -48,7 +51,7 @@ checkCoinbase() {
     echo "Account $accounts has been found"
     accounts=$(caelum --datadir ${DATADIR}/${NAME} account list | awk -F'[{}]' '{print $2}')
     get_coinbase=$(echo $accounts | awk '{print $1;}')
-    sed -i "/COINBASE/s/=.*/=${get_coinbase}/" testnet.env # Append coinbase
+    sed -i "/COINBASE/s/=.*/=${get_coinbase}/" mainnet.env # Append coinbase
   fi
 }
 
@@ -63,7 +66,7 @@ import() {
   echo
   accounts=$(caelum --datadir ${DATADIR}/${NAME} account list | awk -F'[{}]' '{print $2}')
   get_coinbase=$(echo $accounts | awk '{print $1;}')
-  sed -i "/COINBASE/s/=.*/=${get_coinbase}/" testnet.env # Append coinbase
+  sed -i "/COINBASE/s/=.*/=${get_coinbase}/" mainnet.env # Append coinbase
   echo "All accounts found in keystore: "
   echo
   echo $accounts
@@ -79,7 +82,7 @@ createNewAccount() {
   get_coinbase=$(echo $get_all_coinbases | awk '{print $1;}')
   echo
   echo Address created: $get_coinbase
-  sed -i "/COINBASE/s/=.*/=${get_coinbase}/" testnet.env # Append coinbase
+  sed -i "/COINBASE/s/=.*/=${get_coinbase}/" mainnet.env # Append coinbase
 }
 
 # Stop masternodes
@@ -108,7 +111,7 @@ run() {
   get_coinbase=$(echo $get_all_coinbases | awk '{print $1;}')
 
   caelum \
-    --bootnodes "enode://39481ad787702347f828fe126c86d1008cdf3d34c7b24ca8448dedba19e5a020e5a6fbc3774ebcc77e197f10d86205216014fab7f24d9fd663adfac13010a004@80.240.28.135:30301,enode://7586cfcba7cc364476cd8eca038405db288a7ae820063f27ba9b1bd9697a579830baeed5aaa6b074f088094dca403e0ef589ffa34587635e9762ecefe7c5baed@167.86.104.182:30301" --syncmode "full" \
+    --bootnodes $BOOTNODE_1, $BOOTNODE_2 --syncmode "full" \
     --datadir ${DATADIR}/${NAME} --networkid 159 --port $PORT \
     --announce-txs \
     --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8545 --rpcvhosts "*" \
@@ -118,7 +121,7 @@ run() {
     --mine --store-reward --verbosity 3 >${DATADIR}/${NAME}/log.txt 2>&1 &
   process_id=$!
 
-  sed -i "/PID/s/=.*/=${process_id}/" testnet.env # Write process ID to config for logs
+  sed -i "/PID/s/=.*/=${process_id}/" mainnet.env # Write process ID to config for logs
   echo Caelum started with process id $process_id
 }
 
@@ -148,7 +151,7 @@ clean() {
 
 
 start() {
-  sed -i "/COINBASE/s/=.*/=/" testnet.env
+  sed -i "/COINBASE/s/=.*/=/" mainnet.env
   initGenesis
   checkCoinbase
   wait
