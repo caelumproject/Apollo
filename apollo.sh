@@ -16,9 +16,7 @@ include () {
   source mainnet.env
 }
 
-
 include
-
 
 initGenesis() {
   if [ ! -d ${DATADIR}/${NAME}/caelum ]; then
@@ -29,7 +27,6 @@ initGenesis() {
     echo
   fi
 }
-
 
 checkCoinbase() {
   accounts=$(caelum --datadir ${DATADIR}/${NAME} account list | awk -F'[{}]' '{print $2}')
@@ -52,7 +49,6 @@ checkCoinbase() {
   fi
 }
 
-
 import() {
   read -s -p "Enter the private key of the account you want to import:"
   echo $REPLY > .tmp
@@ -71,7 +67,6 @@ import() {
   echo "To remove all excess accounts, please remove them from ${DATADIR}${NAME}/keystore"
 }
 
-
 createNewAccount() {
   caelum --datadir ${DATADIR}/${NAME} --password .pwd account new
   echo
@@ -82,24 +77,16 @@ createNewAccount() {
   sed -i "/COINBASE/s/=.*/=${get_coinbase}/" mainnet.env # Append coinbase
 }
 
-# Stop masternodes
 stop() {
   echo Stopping caelum node ${PID}
   kill -SIGINT ${PID}
   echo Caelum node ${PID} stopped.
 }
 
-
 force () {
   echo Stopping all caelum nodes...
   killall -HUP caelum
   echo All caelum nodes stopped.
-}
-
-
-log() {
-  echo Showing log file. Ctrl+C to exit
-  tail -f -n 2 ${DATADIR}/${NAME}/log.txt
 }
 
 run() {
@@ -108,13 +95,13 @@ run() {
   get_coinbase=$(echo $get_all_coinbases | awk '{print $1;}')
 
   caelum \
-    --bootnodes "enode://507a4a44b7dd697af2c468ee031890d6b902406f19434a36d001c6f8897f90abef4f9260c575877b8cd286647352aa9da8bd3adfe16bec7c2873cfdd5a7d12ce@80.240.21.146:30303", "enode://60ae508f30eebdb6ccc86ccba466cc6e044faa4a898c2428d8a55219234758791399e89cc8aaab101ddb75d2a177901c46d6ccbce3ef2fc0d696c300c6442636@80.240.21.146:30304" --syncmode "full" \
+    --bootnodes "enode://507a4a44b7dd697af2c468ee031890d6b902406f19434a36d001c6f8897f90abef4f9260c575877b8cd286647352aa9da8bd3adfe16bec7c2873cfdd5a7d12ce@80.240.21.146:30303, enode://60ae508f30eebdb6ccc86ccba466cc6e044faa4a898c2428d8a55219234758791399e89cc8aaab101ddb75d2a177901c46d6ccbce3ef2fc0d696c300c6442636@80.240.21.146:30304" --syncmode "full" \
     --datadir ${DATADIR}/${NAME} --networkid 159 --port $PORT \
     --announce-txs \
     --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8545 --rpcvhosts "*" \
     --ws --wsaddr 0.0.0.0 --wsport 8546 --wsorigins "*" \
     --unlock "$get_coinbase" --password ./.pwd \
-    --ethstats "$NAME:CaelumEIP@136.244.87.225:3004" \
+    --ethstats "$NAME:CaelumMain@80.240.21.146:3004" \
     --mine --store-reward --verbosity 3 >${DATADIR}/${NAME}/log.txt 2>&1 &
   process_id=$!
 
@@ -122,17 +109,14 @@ run() {
   echo Caelum started with process id $process_id
 }
 
-
 update() {
   git pull
 }
-
 
 log() {
   echo Showing log file. Ctrl+C to exit
   tail -f -n 2 ${DATADIR}/${NAME}/log.txt
 }
-
 
 clean() {
   read -p "This will completely remove any existing data and accounts! Are you sure? (Y/N) "
@@ -145,7 +129,6 @@ clean() {
     exit
   fi
 }
-
 
 start() {
   sed -i "/COINBASE/s/=.*/=/" mainnet.env
