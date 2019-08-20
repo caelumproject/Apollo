@@ -4,9 +4,7 @@
 
 ## Table of contents
 
-- [Apollo](#apollo)
-    + [:rocket: Strap some rockets to go-caelum](#-rocket--strap-some-rockets-to-go-caelum)
-  * [Table of contents](#table-of-contents)
+
   * [Installation](#installation)
   * [Configuration](#configuration)
   * [Usage](#usage)
