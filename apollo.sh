@@ -129,6 +129,8 @@ clean() {
   if [[ $REPLY =~ ^[Yy]$ ]]
   then
     force
+    mkdir -p ./Archive
+    find . -name "UTC*" -exec cp {} "./Archive/" ;
     rm -rf ${DATADIR}
   else
     echo "canceled by user."
