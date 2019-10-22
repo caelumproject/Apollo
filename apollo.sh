@@ -101,7 +101,7 @@ run() {
   get_coinbase=$(echo $get_all_coinbases | awk '{print $1;}')
 
   caelum \
-    --bootnodes "enode://507a4a44b7dd697af2c468ee031890d6b902406f19434a36d001c6f8897f90abef4f9260c575877b8cd286647352aa9da8bd3adfe16bec7c2873cfdd5a7d12ce@80.240.21.146:30303,enode://60ae508f30eebdb6ccc86ccba466cc6e044faa4a898c2428d8a55219234758791399e89cc8aaab101ddb75d2a177901c46d6ccbce3ef2fc0d696c300c6442636@80.240.21.146:30304" --syncmode "full" \
+    --bootnodes "enode://507a4a44b7dd697af2c468ee031890d6b902406f19434a36d001c6f8897f90abef4f9260c575877b8cd286647352aa9da8bd3adfe16bec7c2873cfdd5a7d12ce@80.240.21.146:30303,enode://60ae508f30eebdb6ccc86ccba466cc6e044faa4a898c2428d8a55219234758791399e89cc8aaab101ddb75d2a177901c46d6ccbce3ef2fc0d696c300c6442636@80.240.21.146:30304, enode://40e07043cbdb9bae36d5392a9cd8848d518153c5d2d897e9f4e0f344aad9518adcc716edd29157ccf238d64b8d55715b829bcacc06eff816e1cff5e43bc61c52@80.240.28.135:30344" --syncmode "full" \
     --datadir ${DATADIR}/${NAME} --networkid 159 --port $PORT \
     --announce-txs \
     --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8545 --rpcvhosts "*" \
