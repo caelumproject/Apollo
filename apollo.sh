@@ -51,7 +51,10 @@ checkCoinbase() {
 
 import() {
   read -s -p "Enter the private key of the account you want to import:"
-  if [ $REPLY -ge 64 ]; then echo "Your private key seems too short. Please start again." ; exit
+  if [ ${$REPLY} -lt 64 ]
+  then 
+    echo "Your private key seems too short. Please start again."
+    exit
   else
   echo $REPLY > .tmp
   caelum --datadir ${DATADIR}/${NAME} --password .pwd account import .tmp
