@@ -56,20 +56,20 @@ import() {
     echo "Your private key seems too short. Please start again."
     exit
   else
-  echo $REPLY > .tmp
-  caelum --datadir ${DATADIR}/${NAME} --password .pwd account import .tmp
-  rm .tmp
-  echo
-  echo "Private key successfully imported!"
-  echo
-  accounts=$(caelum --datadir ${DATADIR}/${NAME} account list | awk -F'[{}]' '{print $2}')
-  get_coinbase=$(echo $accounts | awk '{print $1;}')
-  sed -i "/COINBASE/s/=.*/=${get_coinbase}/" mainnet.env # Append coinbase
-  echo "All accounts found in keystore: "
-  echo
-  echo $accounts
-  echo
-  echo "To remove all excess accounts, please remove them from ${DATADIR}${NAME}/keystore"
+    echo $REPLY > .tmp
+    caelum --datadir ${DATADIR}/${NAME} --password .pwd account import .tmp
+    rm .tmp
+    echo
+    echo "Private key successfully imported!"
+    echo
+    accounts=$(caelum --datadir ${DATADIR}/${NAME} account list | awk -F'[{}]' '{print $2}')
+    get_coinbase=$(echo $accounts | awk '{print $1;}')
+    sed -i "/COINBASE/s/=.*/=${get_coinbase}/" mainnet.env # Append coinbase
+    echo "All accounts found in keystore: "
+    echo
+    echo $accounts
+    echo
+    echo "To remove all excess accounts, please remove them from ${DATADIR}${NAME}/keystore"
   fi
 }
 
