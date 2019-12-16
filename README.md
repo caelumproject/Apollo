@@ -21,7 +21,7 @@
 
 Depending on your security level in your shell, the root password can be asked during the installation script to execute `sudo` commands during installation.
 
-`git clone https://github.com/GreggyGB/Apollo`
+`git clone https://github.com/caelumproject/Apollo`
 
 If you don't have Golang and/or go-caelum installed yet, run our installation script:
 `cd Apollo`
